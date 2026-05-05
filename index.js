@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 const corsOptions = {
-    origin: '*', // Allow all origins for student registration
+    origin: (origin, callback) => callback(null, true),
     credentials: true
 };
 app.use(cors(corsOptions));
